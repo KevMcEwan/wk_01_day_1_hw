@@ -36,11 +36,12 @@ class TestTeam < MiniTest::Test
     assert_equal([ "Klos", "Albertz", "Mols", "Gio"], team2.players)
   end
 
-  # def test_check_player
-  #   team1 = Team.new("Celtic", [ "Larsson", "Sutton", "Petrov"], "O'Neill", 0)
-  #   team2 = Team.new("OldCo", [ "Klos", "Albertz", "Mols"], "Advocaat", 0)
-  #   assert_equal("present", team1.check_player("Larsson"))
-  # end
+  def test_check_player
+    team1 = Team.new("Celtic", [ "Larsson", "Sutton", "Petrov"], "O'Neill", 0)
+    team2 = Team.new("OldCo", [ "Klos", "Albertz", "Mols"], "Advocaat", 0)
+    check_player = team1.players.include?("Larsson")
+    assert_equal(true, check_player)
+  end
 
   def test_add_points_for_a_win
     team1 = Team.new("Celtic", [ "Larsson", "Sutton", "Petrov"], "O'Neill", 0)

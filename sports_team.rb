@@ -14,10 +14,9 @@ attr_accessor :coach, :players, :points
   end
 
 
-  # def check_player(team, player)
-  #   if team1.players
-  #   end
-  # end
+  def check_player(player)
+    team_name.players.include?(player)
+  end
 
   def add_points_for_win(result)
     point = 3 if result == "win"
@@ -25,14 +24,6 @@ attr_accessor :coach, :players, :points
     point = 0 if result == "loss"
     @points =+ point
   end
-
-
-    # def pay_monthly_fee
-    #   monthly_fee = 50 if @type == "personal"
-    #   monthly_fee = 100 if @type == "business"
-    #   @balance -= monthly_fee
-    # end
-
 
   #
   # def team_name
